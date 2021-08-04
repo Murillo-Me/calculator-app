@@ -19,7 +19,7 @@ body>h1 {
     align-items: center;
     background-color: white;
     border-radius: 1rem;
-    width: 900px;
+    width: min(100%,60em);
     height: 500px;
     margin: auto;
     text-align: left;
@@ -28,14 +28,14 @@ body>h1 {
 .input-container {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: min(90%,25em);
     height: 90%;
     color: hsl(183, 100%, 15%);
     font-weight:600;
 }
 
 .input-container>div {
-    margin: auto 0;
+    margin: auto 1em;
 }
 
 .input-box {
@@ -54,7 +54,7 @@ body>h1 {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 .radio-percent-picker {
@@ -109,11 +109,12 @@ input::-webkit-inner-spin-button {
 .output-container {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: min(85%,30em);
     height: 90%;
     background-color: hsl(183, 100%, 15%);
     border-radius: 0.8rem;
     color: white;
+    margin: auto 1em;
 }
 
 .output-field {
@@ -156,4 +157,19 @@ input::-webkit-inner-spin-button {
 .output-container button:hover {
     background-color: #9FE8DF;
     cursor: pointer;
+}
+
+@media (max-width: 58em) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .input-container>* {
+        padding: 0.6em 0em;
+    }
+    .output-container {
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        height: 12em;
+    }
 }

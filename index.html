@@ -3,42 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles/style.css">
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+<h1 class="title">SPLI<br>TTER</h1>
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<div class="main-container">
+  <div class="input-container">
+    <div class="input-field-bill">
+      <label class="input-box-title" for="bill">Bill</label> <br>
+      <input type="number" class="input-box" value="0.00" min="1" step="any" name="bill" id="bill-input">
+    </div>
+    <div class="input-field-tip">
+      <span class="input-box-title">Select Tip %</span><br>
+      <div class="radio-percent-picker">
+        <input type="radio" class="radio__input" value="0.05" name="percent-picker" id="5p">
+        <label for="5p" class="radio__label">5%</label>
+        <input type="radio" class="radio__input" value="0.1" name="percent-picker" id="10p">
+        <label for="10p" class="radio__label">10%</label>
+        <input type="radio" class="radio__input" value="0.15" name="percent-picker" id="15p">
+        <label for="15p" class="radio__label">15%</label>
+        <input type="radio" class="radio__input" value="0.25" name="percent-picker" id="25p">
+        <label for="25p" class="radio__label">25%</label>
+        <input type="radio" class="radio__input" value="0.5" name="percent-picker" id="50p">
+        <label for="50p" class="radio__label">50%</label>
+        <div class="percent-picker" id="custom">Custom</div>
+      </div>
+    </div>
+    <div class="input-field-number-people">
+      <span class="input-box-title">Number of People</span> <br>
+      <input type="number" class="input-box" value="1" min="1" step="any" name="Number of People" id="number-of-people-input">
+    </div>
   </div>
+  <div class="output-container">
+    <div class="output-field">
+      <div class="output-field-left">
+        <span class="output-title">Tip Amount</span><br>
+        <span class="output-unit">/ person</span>
+      </div>
+      <div class="output-field-right">
+        <span id="tip-amount">$0.00</span>
+      </div>
+
+    </div>
+    <div class="output-field">
+      <div class="output-field-left">
+        <span class="output-title">Total</span><br>
+        <span class="output-unit">/ person</span>
+      </div>
+      <div class="output-field-right">
+        <span id="total">$0.00</span>
+      </div>
+    </div>
+    <div class="reset-button">
+        <button id="reset-btn" onclick="clearValues()">RESET</button>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/calculator.js" async></script>
 </body>
 </html>
